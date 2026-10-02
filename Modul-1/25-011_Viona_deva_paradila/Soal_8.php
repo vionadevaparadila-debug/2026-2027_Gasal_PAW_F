@@ -1,4 +1,4 @@
 <?php
-	$nama = "Hello World!";
+	$nama = "Hello  World!";
 	echo strlen($nama);
 ?>
