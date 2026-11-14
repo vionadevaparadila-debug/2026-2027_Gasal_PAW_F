@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <h2>TRANSAKSI</h2>
     <form class="no-print" method="POST" action="">
-        <input type="date" name="tanggal_awal" value="YYYY-MM-DD" placeholder="Tanggal Awal">
-        <input type="date" name="tanggal_akhir" value="DD-MM-YYYY" placeholder="Tanggal Akhir">
+        <input type="date" name="tanggal_awal"  placeholder="Tanggal Awal" value="<?= $awal?>" required>
+        <input type="date" name="tanggal_akhir" placeholder="Tanggal Akhir" value="<?= $akhir?>" required>
         <a href=""><button>Tampilkan</button></a>
     </form>
 
@@ -90,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = mysqli_query($con, "SELECT total, waktu_transaksi FROM transaksi WHERE waktu_transaksi BETWEEN '$awal' AND '$akhir'");
 
     ?>
+    <h2>Rekapitulasi Penjualan Harian</h2>
     <table border="1" width="100%" heigh="100%">
         <thead>
             <tr>
@@ -128,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     ?>
     <!-- SOAL NOMER 3 END -->
-    <div>
+    <div style="width: 100%; max-width: 750px; height: 350px;">
         <canvas id="chart2"></canvas>
     </div>
  <?php }?> <!--tutupe nduwur -->
